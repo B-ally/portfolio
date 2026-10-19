@@ -1,0 +1,183 @@
+:root {
+  --paper: #eef2ec;
+  --ink: #14261e;
+  --muted: #55655d;
+  --forest: #1f4d3a;
+  --gold: #e9a820;
+  --line: #c9d3cb;
+  --heading: "Bricolage Grotesque", Arial, sans-serif;
+  --body: "DM Sans", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+main, .site-header, .site-footer {
+  width: min(100% - 40px, 820px);
+  margin-inline: auto;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+.logo {
+  font-family: var(--heading);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav { display: flex; gap: 22px; }
+
+nav a { text-decoration: none; color: var(--muted); }
+nav a:hover { color: var(--ink); text-decoration: underline; }
+
+/* Hero */
+.hero { padding: 72px 0 80px; }
+
+.hero h1 {
+  font-family: var(--heading);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 8vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 0 0 24px;
+  max-width: 14ch;
+}
+
+.hero p {
+  max-width: 52ch;
+  color: var(--muted);
+  margin: 0 0 32px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--forest);
+  color: #fff;
+  font: 500 1rem var(--body);
+  text-decoration: none;
+  padding: 14px 26px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.button:hover { background: var(--ink); }
+
+/* Sections */
+section { padding: 0 0 80px; }
+
+h2 {
+  font-family: var(--heading);
+  font-size: 1.9rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px;
+}
+
+/* Projects: large rows, the memorable part of the page */
+.project-list { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 24px;
+  align-items: baseline;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.project h3 {
+  font-family: var(--heading);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.project p { grid-column: 1; margin: 0; color: var(--muted); max-width: 52ch; }
+
+.project .tags { grid-column: 1; margin: 4px 0 0; color: var(--forest); font-weight: 500; font-size: 0.95rem; }
+
+.project .links { grid-column: 2; grid-row: 1; display: flex; gap: 16px; }
+
+.project .links a { font-weight: 500; color: var(--forest); }
+.project .links a:hover { color: var(--ink); }
+
+/* About */
+.about p { max-width: 58ch; color: var(--muted); }
+
+.skills { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 24px 0 0; }
+
+.skills li {
+  padding: 6px 16px;
+  border: 1.5px solid var(--forest);
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Contact */
+.contact p { max-width: 52ch; color: var(--muted); }
+
+form { display: flex; flex-direction: column; gap: 18px; max-width: 520px; margin-top: 24px; }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+label { font-weight: 500; }
+
+input, textarea {
+  font: inherit;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+}
+
+input:hover, textarea:hover { border-color: var(--forest); }
+
+#formMessage { margin: 0; min-height: 1.6em; font-weight: 500; }
+#formMessage.error { color: #b3261e; }
+#formMessage.success { color: var(--forest); }
+
+/* Footer */
+.site-footer { padding: 28px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.95rem; }
+
+/* Mobile */
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  .hero { padding: 40px 0 56px; }
+  .project { grid-template-columns: 1fr; }
+  .project .links { grid-column: 1; grid-row: auto; }
+  nav { gap: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

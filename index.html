@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brian Mutugi | Web Developer</title>
+  <meta name="description" content="Brian Mutugi is a web developer in Nairobi building responsive websites and small web apps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#top">Brian Mutugi</a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>I build websites that are easy to navigate and work on every screen.</h1>
+      <p>Web developer in Nairobi. I make responsive landing pages, contact forms and small web apps for businesses and people who need something clear and fast.</p>
+      <a class="button" href="#contact">Start a project</a>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <ul id="projectList" class="project-list"></ul>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About</h2>
+      <p>I work with HTML, CSS and JavaScript, and I am learning React. I like projects where I can show a client something working quickly, then improve it with their feedback.</p>
+      <ul class="skills" id="skillList"></ul>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p>Tell me what you need and I will reply with a plan and a price.</p>
+      <form id="contactForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5"></textarea>
+        </div>
+        <p id="formMessage" role="status"></p>
+        <button type="submit" class="button">Send message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Brian Mutugi. Nairobi, Kenya.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
