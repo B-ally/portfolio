@@ -6,7 +6,7 @@ const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
 const messageInput = document.querySelector("#message");
 const formMessage = document.querySelector("#formMessage");
-
+const formEndpoint="https://formspree.io/f/xaeqzvjg"
 // ===== 2. YOUR PROJECTS: add a new project by copying one block =====
 // Leave link as "" if you do not have a live link yet. It will not show.
 const projects = [
@@ -76,10 +76,10 @@ form.addEventListener("submit", async (event) => {
    showMessage("Sending...", "success");
 
   try {
-    const response = await fetch("/", {
+    const response = await fetch(formEndpoint, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(new FormData(form)).toString()
+      headers: { Accept: "application/json" },
+      body: new FormData(form)
     });
 
     if (response.ok) {

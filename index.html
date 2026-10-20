@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:,>"
 </head>
 <body>
   <header class="site-header">
@@ -41,9 +42,7 @@
     <section id="contact" class="contact">
       <h2>Contact</h2>
       <p>Tell me what you need and I will reply with a plan and a price.</p>
-      <form id="contactForm" name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-        <input type="hidden" name="form-name" value="contact">
-         <p hidden><label>: <input name="bot-field"></label></p>                 
+      <form id="contactForm"  novalidate>            
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" autocomplete="name">
