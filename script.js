@@ -55,7 +55,7 @@ function showMessage(text, type) {
   formMessage.className = type;
 }
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   if (nameInput.value.trim() === "") {
@@ -73,8 +73,22 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  // To receive messages by email: create a free form at formspree.io,
-  // then send the data there with fetch(). Until then, this only confirms.
-  showMessage("Message ready to send. Connect Formspree to receive it.", "success");
-  form.reset();
+   showMessage("Sending...", "success");
+
+  try {
+    const response = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form)).toString()
+    });
+
+    if (response.ok) {
+      showMessage("Thanks, your message was sent. I will reply within 24 hours.", "success");
+      form.reset();
+    } else {
+      showMessage("Something went wrong. Please try again.", "error");
+    }
+  } catch (error) {
+    showMessage("Could not send. Check your connection and try again.", "error");
+  }
 });
