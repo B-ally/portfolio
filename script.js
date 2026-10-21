@@ -54,9 +54,11 @@ function showMessage(text, type) {
   formMessage.textContent = text;
   formMessage.className = type;
 }
+  
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
+  
 
   if (nameInput.value.trim() === "") {
     showMessage("Enter your name.", "error");
@@ -91,4 +93,5 @@ form.addEventListener("submit", async (event) => {
   } catch (error) {
     showMessage("Could not send. Check your connection and try again.", "error");
   }
+  document.querySelector("#contactForm button").addEventListener("click", () => console.log("button clicked"));
 });
